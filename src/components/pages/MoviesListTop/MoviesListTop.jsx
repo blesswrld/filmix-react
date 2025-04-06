@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TOP_LISTS } from "../../constants";
 
 import { useGetFilmsTopQuery } from "../../../services/kinopoiskApi";
@@ -18,6 +18,10 @@ export default function MoviesListTop() {
         type: movieType.value,
         page,
     });
+
+    useEffect(() => {
+        setPage(1);
+    }, [location]);
 
     if (error) return <p>error</p>;
 

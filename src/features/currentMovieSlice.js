@@ -17,6 +17,4 @@ export const currentMovieSlice = createSlice({
     },
 });
 
-// export const { increment, decrement, incrementByAmount } = counterSlice.actions;
-
 export default currentMovieSlice.reducer;

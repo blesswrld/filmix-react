@@ -6,7 +6,7 @@ export const store = configureStore({
     reducer: {
         [kinopoiskApi.reducerPath]: kinopoiskApi.reducer,
 
-        currentMovie: currentMovieReducer,
+        currentMovieSlice: currentMovieReducer,
     },
 
     middleware: (getDefaultMiddleware) =>

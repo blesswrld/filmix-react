@@ -79,7 +79,7 @@ export const TOP_LISTS = [
     {
         title: "Популярные Сериалы",
         icon: "LiveTvIcon",
-        url: "/popular-shows",
+        url: "/popular-serials",
         value: "POPULAR_SERIES",
     },
 ];
@@ -93,7 +93,7 @@ export const MOVIE_LISTS = [
     {
         title: "Сериалы",
         icon: "ReorderIcon",
-        url: "/shows",
+        url: "/serials",
     },
     {
         title: "Мультфильмы",

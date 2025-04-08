@@ -12,6 +12,8 @@ import "./MoviesCarousel.css"; // Убедитесь, что стили подх
 
 import { Link as RouterLink } from "react-router-dom";
 import { Link, Typography, Box } from "@mui/material"; // Используем Box для отступов
+import ErrorMessage from "../../UI/ErrorMessage";
+import MoviesSkeleton from "./MoviesSkeleton";
 
 export default function Movies() {
     const {
@@ -24,7 +26,7 @@ export default function Movies() {
         responseCartoons,
     } = useMoviesQuery();
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <MoviesSkeleton />;
 
     const queryError =
         hasError ||
@@ -35,7 +37,7 @@ export default function Movies() {
         responseCartoons.error;
 
     if (queryError) {
-        return <p>error</p>;
+        return <ErrorMessage />; // компонент для сообщения с ошибкой
     }
 
     const renderMovieSlides = (movies) => {

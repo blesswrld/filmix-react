@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@base-ui-components/react": "^1.0.0-alpha.7",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@lottiefiles/dotlottie-react": "^0.13.3",

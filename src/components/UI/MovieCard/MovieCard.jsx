@@ -18,7 +18,8 @@ export default function MovieCard({ movie }) {
             <Link
                 component={RouterLink}
                 to={`/movie/${movie.kinopoiskId}`}
-                textAlign="center !important"
+                textAlign="center"
+                margin="0 auto"
                 sx={{ width: "200px" }}
             >
                 {movie.nameRu ? movie.nameRu : movie.nameOriginal}

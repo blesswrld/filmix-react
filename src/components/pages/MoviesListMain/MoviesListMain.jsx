@@ -10,13 +10,13 @@ import {
 import MoviesList from "../../UI/MoviesList/MoviesList";
 import { ArrowBack } from "@mui/icons-material";
 import ErrorMessage from "../../UI/ErrorMessage";
-import MoviesListSkeleton from "../../UI/MovieListSkeleton";
 import { MOVIE_LISTS } from "../../constants";
 import {
     useGetFilmsQuery,
     useGetGenresAndCountriesQuery,
 } from "../../../services/kinopoiskApi";
 import SelectMovies from "../../UI/SelectMovies";
+import MoviesListMainSkeleton from "./MoviesListMainSkeleton";
 
 const initialFilters = {
     sort: "",
@@ -86,7 +86,7 @@ export default function MoviesListMain() {
     }
 
     if (filmsLoading || filtersLoading) {
-        return <MoviesListSkeleton />;
+        return <MoviesListMainSkeleton />;
     }
 
     const countriesOptions = genresAndCountriesData?.countries || [];
@@ -102,7 +102,14 @@ export default function MoviesListMain() {
                     onClick={() => navigate(-1)}
                     sx={{ mr: 1 }}
                 />
-                <Typography variant="h4">
+                <Typography
+                    variant="h4"
+                    sx={{
+                        "@media (max-width: 460px)": {
+                            fontSize: "28px",
+                        },
+                    }}
+                >
                     {movieType?.title || "Фильмы"}
                 </Typography>
             </Stack>

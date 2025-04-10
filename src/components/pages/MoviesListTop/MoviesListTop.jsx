@@ -7,7 +7,7 @@ import { Button, Stack, Typography } from "@mui/material";
 import MoviesList from "../../UI/MoviesList/MoviesList";
 import { ArrowBack } from "@mui/icons-material";
 import ErrorMessage from "../../UI/ErrorMessage";
-import MoviesListSkeleton from "../../UI/MovieListSkeleton";
+import MoviesListTopSkeleton from "./MoviesListTopSkeleton";
 
 export default function MoviesListTop() {
     const location = useLocation();
@@ -27,7 +27,7 @@ export default function MoviesListTop() {
 
     if (error) return <ErrorMessage />;
 
-    if (isLoading) return <MoviesListSkeleton />;
+    if (isLoading) return <MoviesListTopSkeleton />;
 
     return (
         <>

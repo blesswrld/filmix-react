@@ -7,7 +7,6 @@ export default function MoviesSkeleton() {
     return (
         <Box mt={2}>
             {new Array(5).fill(null).map((_, index) => (
-                // TODO Доработать стили для скелетона
                 <Fragment key={index}>
                     <Skeleton
                         variant="rectangular"

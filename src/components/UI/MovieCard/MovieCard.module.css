@@ -5,3 +5,9 @@
 .img:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 460px) {
+    .img {
+        width: 290px;
+    }
+}

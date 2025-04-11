@@ -131,7 +131,7 @@ export default function MoviesListMain() {
                         minHeight: 60,
                     }}
                 >
-                    <CircularProgress size={30} />
+                    <CircularProgress size={36} />
                     <Typography variant="body1" sx={{ ml: 1.5 }}>
                         Загрузка...
                     </Typography>

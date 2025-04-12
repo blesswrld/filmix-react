@@ -2,7 +2,14 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const kinopoiskApiKey = process.env.REACT_APP_KINOPOISK_KEY;
 
-const excludeGenres = ["", "новости", "церемония", "реальное ТВ", "ток-шоу"];
+const excludeGenres = [
+    "",
+    "новости",
+    "для взрослых",
+    "церемония",
+    "реальное ТВ",
+    "ток-шоу",
+];
 
 export const kinopoiskApi = createApi({
     reducerPath: "kinopoiskApi",

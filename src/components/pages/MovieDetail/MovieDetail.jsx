@@ -28,7 +28,7 @@ function DetailRow({ label, value, isBlock = false }) {
 
     return (
         <Grid container spacing={1} sx={{ mb: 1 }}>
-            <Grid xs={12} sm={4} md={3} lg={2}>
+            <Grid size={{ xs: 12, sm: 4, md: 3, lg: 2 }}>
                 <Typography
                     variant="body1"
                     color="text.secondary"
@@ -38,7 +38,7 @@ function DetailRow({ label, value, isBlock = false }) {
                     {label}
                 </Typography>
             </Grid>
-            <Grid xs={12} sm={8} md={9} lg={10}>
+            <Grid size={{ xs: 12, sm: 8, md: 9, lg: 10 }}>
                 <Typography
                     variant="body1"
                     component={isBlock ? "div" : "span"}
@@ -82,7 +82,7 @@ export default function MovieDetail() {
     return (
         <Container maxWidth="lg" sx={{ py: 3 }}>
             <Grid container spacing={{ xs: 2, md: 4 }}>
-                <Grid xs={12} md={4}>
+                <Grid size={{ xs: 12, md: 4 }}>
                     <Stack
                         component="img"
                         src={film.posterUrlPreview || film.posterUrl}
@@ -97,7 +97,7 @@ export default function MovieDetail() {
                     />
                 </Grid>
 
-                <Grid xs={12} md={8}>
+                <Grid size={{ xs: 12, md: 8 }}>
                     <Stack direction="row" alignItems="flex-start" mb={2.5}>
                         <Button
                             startIcon={<ArrowBack />}

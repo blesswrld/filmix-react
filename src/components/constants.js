@@ -1,11 +1,11 @@
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import StarIcon from "@mui/icons-material/Star";
 import StarPurple500Icon from "@mui/icons-material/StarPurple500";
 import BloodtypeIcon from "@mui/icons-material/Bloodtype";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
-import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
-import MoodBadIcon from "@mui/icons-material/MoodBad";
-import PoolIcon from "@mui/icons-material/Pool";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import CoronavirusIcon from "@mui/icons-material/Coronavirus";
+import FloodOutlinedIcon from "@mui/icons-material/FloodOutlined";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
@@ -13,14 +13,14 @@ import ReorderIcon from "@mui/icons-material/Reorder";
 import FortIcon from "@mui/icons-material/Fort";
 
 export const iconComponents = {
-    AutoAwesomeIcon,
+    StarIcon,
     StarPurple500Icon,
     BloodtypeIcon,
     MenuBookIcon,
     FamilyRestroomIcon,
-    VolunteerActivismIcon,
-    MoodBadIcon,
-    PoolIcon,
+    FavoriteBorderIcon,
+    CoronavirusIcon,
+    FloodOutlinedIcon,
     LiveTvIcon,
     LocalMoviesIcon,
     ReorderIcon,
@@ -30,7 +30,7 @@ export const iconComponents = {
 export const TOP_LISTS = [
     {
         title: "ТОП 100 популярных фильмов",
-        icon: "AutoAwesomeIcon",
+        icon: "StarIcon",
         url: "/popular-films",
         value: "TOP_POPULAR_MOVIES",
     },
@@ -60,19 +60,19 @@ export const TOP_LISTS = [
     },
     {
         title: "Романтика",
-        icon: "VolunteerActivismIcon",
+        icon: "FavoriteBorderIcon",
         url: "/romantic-films",
         value: "LOVE_THEME",
     },
     {
         title: "Зомби",
-        icon: "MoodBadIcon",
+        icon: "CoronavirusIcon",
         url: "/zombie-films",
         value: "ZOMBIE_THEME",
     },
     {
         title: "Катастрофы",
-        icon: "PoolIcon",
+        icon: "FloodOutlinedIcon",
         url: "/catastrophe-films",
         value: "CATASTROPHE_THEME",
     },

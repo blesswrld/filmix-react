@@ -37,7 +37,7 @@ export default function ActorDetail() {
     return (
         <>
             <Grid container spacing={4} pt={2}>
-                <Grid size={{ xs: 12, sm: 4, md: 4 }}>
+                <Grid size={{ xs: 12, sm: 8, md: 4 }}>
                     <img
                         src={data.posterUrl}
                         style={{ maxWidth: "100%" }}

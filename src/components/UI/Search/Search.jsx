@@ -44,6 +44,13 @@ export default function Search() {
             sx={{
                 width: 300,
                 backgroundColor: "rgba(255,255,255, 0.15)",
+                "@media (max-width: 600px)": {
+                    mt: "4px",
+                    mb: "4px",
+                },
+                "@media (max-width: 531px)": {
+                    width: "50%",
+                },
                 "& .MuiOutlinedInput-root": {
                     "& fieldset": {
                         border: "none",

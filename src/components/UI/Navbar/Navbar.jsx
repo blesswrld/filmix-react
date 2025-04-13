@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
     AppBar,
     Container,
@@ -23,6 +23,10 @@ import { Link as RouterLink } from "react-router-dom";
 
 import { iconComponents, MOVIE_LISTS, TOP_LISTS } from "../../constants";
 import Search from "../Search";
+import { ColorModeContext } from "../../../context/ToggleColorMode";
+
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
 const Icon = ({ iconName }) => {
     const IconComponent = iconComponents[iconName];
@@ -34,6 +38,7 @@ const Icon = ({ iconName }) => {
 
 export default function Navbar() {
     const [isOpen, setOpen] = useState(false);
+    const { toggleColorMode, mode } = useContext(ColorModeContext);
 
     const trigger = useScrollTrigger({
         target: window,
@@ -53,7 +58,9 @@ export default function Navbar() {
                                 color="inherit"
                                 edge="start"
                                 onClick={handleDrawerToggle}
-                                sx={{ mr: 2 }}
+                                sx={{
+                                    mr: 2,
+                                }}
                             >
                                 <MenuIcon />
                             </IconButton>
@@ -68,6 +75,9 @@ export default function Navbar() {
                                         color: "white",
                                         textDecoration: "none",
                                         flexGrow: 1,
+                                        "@media (max-width: 600px)": {
+                                            fontSize: "1.925rem",
+                                        },
                                     }}
                                     component={RouterLink}
                                     variant="h4"
@@ -77,6 +87,16 @@ export default function Navbar() {
                                 </Typography>
 
                                 <Search />
+                                <IconButton
+                                    color="inherit"
+                                    onClick={toggleColorMode}
+                                >
+                                    {mode === "dark" ? (
+                                        <LightModeIcon />
+                                    ) : (
+                                        <DarkModeIcon />
+                                    )}
+                                </IconButton>
                             </Stack>
                         </Toolbar>
                     </Container>

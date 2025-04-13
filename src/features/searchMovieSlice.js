@@ -7,22 +7,20 @@ const initialState = {
     type: "",
     year: "",
     page: 1,
+    keyword: "",
 };
 
-export const currentMovieSlice = createSlice({
+export const searchMovieSlice = createSlice({
     name: "currentMovieSlice",
     initialState,
     reducers: {
-        selectMovie: (state, action) => ({
+        setSearchMovie: (state, action) => ({
             ...state,
             ...action.payload,
-        }),
-        resetMovie: () => ({
-            ...initialState,
         }),
     },
 });
 
-export const { selectMovie, resetMovie } = currentMovieSlice.actions;
+export const { setSearchMovie } = searchMovieSlice.actions;
 
-export default currentMovieSlice.reducer;
+export default searchMovieSlice.reducer;

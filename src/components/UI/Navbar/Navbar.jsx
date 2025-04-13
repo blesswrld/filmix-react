@@ -14,6 +14,7 @@ import {
     Typography,
     useScrollTrigger,
     Link,
+    Stack,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
@@ -21,12 +22,12 @@ import Divider from "@mui/material/Divider";
 import { Link as RouterLink } from "react-router-dom";
 
 import { iconComponents, MOVIE_LISTS, TOP_LISTS } from "../../constants";
+import Search from "../Search";
 
 const Icon = ({ iconName }) => {
     const IconComponent = iconComponents[iconName];
-    // Добавим проверку на случай, если иконка не найдена
     if (!IconComponent) {
-        return null; // возвращаем иконку по умолчанию
+        return null;
     }
     return <IconComponent />;
 };
@@ -44,11 +45,9 @@ export default function Navbar() {
 
     return (
         <React.Fragment>
-            {" "}
             <Slide appear={false} direction="down" in={!trigger}>
                 <AppBar>
                     <Container maxWidth="lg">
-                        {" "}
                         <Toolbar>
                             <IconButton
                                 color="inherit"
@@ -58,22 +57,27 @@ export default function Navbar() {
                             >
                                 <MenuIcon />
                             </IconButton>
-
-                            {/* Название приложения */}
-                            <Typography
-                                sx={{
-                                    color: "white",
-                                    textDecoration: "none",
-                                    flexGrow: 1,
-                                }}
-                                component={RouterLink}
-                                variant="h4"
-                                to={"/"}
+                            <Stack
+                                flexDirection="row"
+                                justifyContent="space-between"
+                                alignItems="center"
+                                width="100%"
                             >
-                                filmix
-                            </Typography>
+                                <Typography
+                                    sx={{
+                                        color: "white",
+                                        textDecoration: "none",
+                                        flexGrow: 1,
+                                    }}
+                                    component={RouterLink}
+                                    variant="h4"
+                                    to={"/"}
+                                >
+                                    filmix
+                                </Typography>
 
-                            {/* Тут можно добавить другие элементы Navbar справа, если нужно */}
+                                <Search />
+                            </Stack>
                         </Toolbar>
                     </Container>
                 </AppBar>
@@ -86,32 +90,26 @@ export default function Navbar() {
             >
                 <Box sx={{ width: 250 }} onClick={handleDrawerToggle}>
                     <List>
-                        {TOP_LISTS.map(
-                            (
-                                item // Используем круглые скобки для неявного return
-                            ) => (
-                                <Link
-                                    key={item.title}
-                                    component={RouterLink}
-                                    to={item.url}
-                                    sx={{
-                                        textDecoration: "none",
-                                        color: "inherit",
-                                    }}
-                                >
-                                    <ListItem disablePadding>
-                                        <ListItemButton>
-                                            <ListItemIcon>
-                                                <Icon iconName={item.icon} />
-                                            </ListItemIcon>
-                                            <ListItemText
-                                                primary={item.title}
-                                            />
-                                        </ListItemButton>
-                                    </ListItem>
-                                </Link>
-                            )
-                        )}
+                        {TOP_LISTS.map((item) => (
+                            <Link
+                                key={item.title}
+                                component={RouterLink}
+                                to={item.url}
+                                sx={{
+                                    textDecoration: "none",
+                                    color: "inherit",
+                                }}
+                            >
+                                <ListItem disablePadding>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                            <Icon iconName={item.icon} />
+                                        </ListItemIcon>
+                                        <ListItemText primary={item.title} />
+                                    </ListItemButton>
+                                </ListItem>
+                            </Link>
+                        ))}
                     </List>
                     <Divider />
                     <List>

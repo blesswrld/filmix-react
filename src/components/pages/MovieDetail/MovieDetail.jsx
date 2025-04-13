@@ -4,7 +4,7 @@ import {
     useGetSequelsAndPrequelsQuery,
     useGetStaffQuery,
 } from "../../../services/kinopoiskApi";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link as ReactRouter } from "react-router-dom";
 import {
     Box,
     Button,
@@ -15,6 +15,7 @@ import {
     Stack,
     Typography,
     Divider,
+    Link,
 } from "@mui/material";
 import ErrorMessage from "../../UI/ErrorMessage";
 import { ArrowBack, Language, Movie } from "@mui/icons-material";
@@ -63,7 +64,7 @@ export default function MovieDetail() {
         responseStaff.isLoading
     ) {
         return (
-            <Box display="flex" justifyContent="center" margin="auto">
+            <Box display="flex" justifyContent="center" height="80vh">
                 <CircularProgress size={36} />
             </Box>
         );
@@ -164,9 +165,16 @@ export default function MovieDetail() {
                                 ?.filter((el) => el.professionKey === "ACTOR")
                                 .slice(0, 10)
                                 .map(({ staffId, nameRu }) => (
-                                    <Typography variant="body1" key={staffId}>
-                                        {nameRu}
-                                    </Typography>
+                                    <div key={nameRu}>
+                                        <Link
+                                            component={ReactRouter}
+                                            to={`/actor/${staffId}`}
+                                            variant="body1"
+                                            key={staffId}
+                                        >
+                                            {nameRu}
+                                        </Link>
+                                    </div>
                                 ))}
                             {staff?.filter((el) => el.professionKey === "ACTOR")
                                 .length === 0 && (

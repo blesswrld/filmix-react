@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 
 import { CssBaseline } from "@mui/material";
 
-import "bear-react-carousel/dist/index.css";
 import ToggleColorMode from "./context/ToggleColorMode";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
